@@ -1,0 +1,3 @@
+include ':app'
+include ':mod-loger'
+rootProject.name = "Loger"
