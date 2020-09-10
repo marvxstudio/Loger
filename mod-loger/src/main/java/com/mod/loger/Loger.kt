@@ -21,6 +21,7 @@ object Loger : ILoger {
         ILoger.ModeLog.V -> Log.v(tag, msg.toString())
         ILoger.ModeLog.W -> Log.w(tag, msg.toString())
         ILoger.ModeLog.E -> Log.e(tag, msg.toString())
+
       }
     }
   }
@@ -32,7 +33,7 @@ object Loger : ILoger {
 
 }
 
-fun <T : Any> T?.showLog(msgPre: String = "", msgText: String = "$msgPre $this", isOpen: Boolean = Loger.isOpen, tag: String = Loger.mTag, mode: ILoger.ModeLog = ILoger.ModeLog.D): T? {
+fun <T> T.showLog(msgPre: String = "", msgText: String = "$msgPre $this", isOpen: Boolean = Loger.isOpen, tag: String = Loger.mTag, mode: ILoger.ModeLog = ILoger.ModeLog.D): T {
   Loger.show(msgText, isOpen, tag, mode)
   return this
 }
